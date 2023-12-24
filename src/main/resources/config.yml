@@ -1,0 +1,97 @@
+# 默认语言
+lang: en
+
+# 强制在连接时播放音乐（玩家无法禁用）
+forceJoinMusic: false
+
+# 玩家连接到服务器时自动播放的音乐 - 需要启用forceJoinMusic（null为禁用该功能）
+# 必须是文件名（例如 "song.nbs"）
+songOnJoin: null
+
+# 当玩家点击唱片机方块时打开插件GUI
+jukeboxClick: false
+
+# 在开始/停止音乐时发送插件消息...
+sendMessages: true
+
+# 异步加载文件
+asyncLoading: false
+
+# 启用音乐的世界列表（空 = 所有世界）
+enabledWorlds: []
+
+# 音符粒子
+noteParticles: true
+
+# 是否使用动作栏消息而非聊天消息（在1.8上不可用）
+actionBar: false
+
+# 启用或禁用服务器广播
+radio: true
+
+# 玩家加入服务器时自动播放广播
+radioOnJoin: false
+
+# 在离开服务器前重新加载玩家之前听的歌曲
+reloadOnJoin: true
+
+# 定期停止原版音乐 - 可能会导致一些延迟 - 适用于1.13及以上
+preventVanillaMusic: false
+
+# 在GUI中显示的歌曲材质，用逗号分隔。例如: [DIRT, GOLD_INGOT] -
+# 任何无效或空列表将导致随机记录。
+songItems: []
+
+# 用于所有玩家的歌曲物品的名称（变量：NAME，ID，AUTHOR）
+itemFormat: "{NAME}"
+
+# 当找不到作者时，用于所有玩家的歌曲物品的名称（变量：NAME，ID）
+itemFormatWithoutAuthor: "{NAME}"
+
+# 用于具有music.adminItem权限的玩家的歌曲物品的名称（变量：NAME，ID，AUTHOR）
+itemFormatAdmin: "{NAME} | {ID}"
+
+# 当找不到作者时，用于具有music.adminItem权限的玩家的歌曲物品的名称（变量：NAME，ID）
+itemFormatAdminWithoutAuthor: "{NAME} | {ID}"
+
+# 格式化的歌曲名称（变量：NAME，ID，AUTHOR）
+songFormat: "\"{NAME}\", {AUTHOR}"
+
+# 当找不到作者时，格式化的歌曲名称（变量：NAME，ID）
+songFormatWithoutAuthor: "\"{NAME}\""
+
+# 用于歌曲的项目描述的格式（变量：NAME，ID，AUTHOR，DESCRIPTION）
+descriptionFormat: "§7{DESCRIPTION}"
+
+# 当找不到作者时，用于歌曲的项目描述的格式（变量：NAME，ID，DESCRIPTION）
+descriptionFormatWithoutAuthor: "§7{DESCRIPTION}"
+
+# 玩家退出时是否保留玩家数据到文件中 - 如果启用数据库，则始终启用
+savePlayerDatas: true
+
+# 歌曲开头淡入的ticks数量（0为禁用）
+fadeInDuration: 0
+
+# 歌曲结尾淡出的ticks数量（0为禁用）
+fadeOutDuration: 20
+
+# 决定JukeBox是否启用"通过资源包扩展音符范围"选项
+useExtendedOctaveRange: false
+
+# 数据库配置
+database:
+  enabled: false
+  host: "localhost"
+  port: 3306
+  database: "jukebox"
+  username: "unknown"
+  password: "unknown"
+  ssl: false
+
+# 新玩家的默认选项
+defaultPlayerOptions:
+  volume: 70
+  join: false
+  shuffle: false
+  particles: false
+  repeat: false

@@ -1,0 +1,71 @@
+name: JukeBox
+author: SkytAsul
+version: ${project.version}
+description: A plugin who allows you to propose note block songs/musics to your players.
+main: fr.skytasul.music.JukeBox
+api-version: 1.13
+website: https://www.spigotmc.org/resources/jukebox-music-plugin.40580/
+depend: [NoteBlockAPI]
+softdepend: [PlaceholderAPI]
+commands:
+  music:
+    description: Main command for musics
+    aliases: [jukebox]
+    permission: music.command
+  comusic:
+    description: User music command for controlling personal music.
+    usage: /comusic <random|volume|loop|next|play|toggle|stop>
+    aliases: [cmusic]
+  adminmusic:
+    description: Admin command for musics
+    aliases: [amusic]
+    permission: music.command.admin
+
+permissions:
+  music.*:
+    description: Give access to JukeBox whole
+    children:
+      music.save-datas: true
+      music.command: true
+      music.command.admin: true
+      music.adminItem: true
+      music.random: true
+      music.radio: true
+      music.favorites: true
+      music.particles: true
+      music.play-on-join: true
+      music.shuffle: true
+      music.loop: true
+  music.random:
+    description: Allows player to play random song
+    default: true
+  music.radio:
+    description: Allows player to listen to the Radio
+    default: true
+  music.favorites:
+    description: Allows player to listen and manage their Favorites playlist
+    default: true
+  music.particles:
+    description: Allows player to enable particles effect
+    default: true
+  music.play-on-join:
+    description: Allows player to enable the "play on join" option
+    default: true
+  music.shuffle:
+    description: Allows player to enable the "shuffle" option
+    default: true
+  music.loop:
+    description: Allows player to enable the "loop" option
+    default: true
+  music.save-datas:
+    description: Required for the plugin to save player's data after logout
+    default: true
+  music.command:
+    description: Give access to /music command
+    default: true
+  music.command.admin:
+    description: Give access to /adminmusic
+    default: op
+  music.adminItem:
+    description: Changes item format
+    default: op

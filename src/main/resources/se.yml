@@ -1,0 +1,18 @@
+NEXT_PAGE: §bNästa sida
+LATER_PAGE: §bFörra sidan
+PLAYER: §cDu måste vara en spelare för att kunna använda detta kommando.
+RELOAD_MUSIC: §aReload.
+INV_NAME: §aJukebox
+TOGGLE_PLAYING: §aStart/Stopp
+VOLUME: §9Iq
+RIGHT_CLICK: §aHöger klicka
+LEFT_CLICK: §aVänster klicka
+RANDOM_MUSIC: §9Random Musik
+STOP: §cStoppa musiken
+MUSIC_STOPPED: Du slutade lyssna på musiken.
+ENABLE: §aAktivera
+DISABLE: §cDeaktivera
+TOGGLE_SHUFFLE_MODE: '{TOGGLE} §eShuffle Läge'
+MUSIC_PLAYING: '§aMusiken som spelas: '
+AVAILABLE_COMMANDS: '§aAvailable commands:'
+# Translated by chris_
