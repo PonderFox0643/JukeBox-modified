@@ -14,7 +14,7 @@ commands:
     permission: music.command
   comusic:
     description: User music command for controlling personal music.
-    usage: /comusic <random|volume|loop|next|play|toggle|stop>
+    usage: /comusic <random|volume|loop|next|playlist|play|toggle|stop>
     aliases: [cmusic]
   adminmusic:
     description: Admin command for musics

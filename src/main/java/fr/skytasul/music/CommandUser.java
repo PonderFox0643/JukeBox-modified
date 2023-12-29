@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import com.xxmicloxx.NoteBlockAPI.model.Song;
 
 import fr.skytasul.music.utils.Playlists;
+
 public class CommandUser implements CommandExecutor {
 
     @Override
@@ -20,7 +21,7 @@ public class CommandUser implements CommandExecutor {
         Player player = (Player) sender;
 
         if (args.length == 0) {
-            sender.sendMessage("§c语法错误。使用 /comusic <random|volume|loop|next|play|toggle|stop>");
+            sender.sendMessage("§c语法错误。使用 /comusic <random|volume|loop|next|playlist|play|toggle|stop>");
             return false;
         }
 
@@ -30,7 +31,6 @@ public class CommandUser implements CommandExecutor {
             case "random":
                 sender.sendMessage(random(player));
                 break;
-
             case "volume":
                 if (args.length < 2) {
                     sender.sendMessage("§c语法错误。使用 /comusic volume <+|-|value>");
@@ -62,7 +62,6 @@ public class CommandUser implements CommandExecutor {
                 pdata.nextSong();
                 sender.sendMessage("§a下一首歌曲。");
                 break;
-
             case "play":
                 if (args.length < 2) {
                     sender.sendMessage("§c语法错误。使用 /comusic play <songId|songName>");
@@ -82,8 +81,23 @@ public class CommandUser implements CommandExecutor {
                 sender.sendMessage("§a音乐已停止。");
                 break;
 
+            case "playlist":
+                if (args.length < 2) {
+                    sender.sendMessage("§c语法错误。使用 /comusic playlist <playlistName>");
+                    return false;
+                }
+
+                try {
+                    Playlists list = Playlists.valueOf(args[1].toUpperCase());
+                    pdata.setPlaylist(list, true);
+                    sender.sendMessage("§a已切换到播放列表：" + args[1]);
+                } catch (IllegalArgumentException ex) {
+                    sender.sendMessage("§c未知播放列表：" + args[1]);
+                }
+                break;
+
             default:
-                sender.sendMessage("§c未知命令。使用 /comusic <random|volume|loop|next|play|toggle|stop>");
+                sender.sendMessage("§c未知命令。使用 /comusic <random|volume|loop|next|playlist|play|toggle|stop>");
                 break;
         }
 
